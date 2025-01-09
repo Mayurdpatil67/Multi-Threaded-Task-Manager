@@ -7,7 +7,7 @@ public class Task {
     public Task(String title, String description) {
         this.title = title;
         this.description = description;
-        this.isCompleted = false; // initialising the task as not completed
+        this.isCompleted = false;
     }
 
     public String getTitle() {
