@@ -22,7 +22,6 @@ public class Task {
         return isCompleted;
     }
 
-    // method to mark the task as completed
     public void markCompleted() {
         this.isCompleted = true;
     }
