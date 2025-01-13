@@ -62,5 +62,4 @@ public class TaskManager<T extends Task> {
         T existingTask = getTask(task.hashCode()); // Retrives the task by its ID (Hashcode)
         existingTask.markCompleted(); // Mark it as complete
     }
-
 }
