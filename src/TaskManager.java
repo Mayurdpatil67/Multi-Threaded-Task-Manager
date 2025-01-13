@@ -22,17 +22,16 @@ public class TaskManager<T extends Task> {
 
     // Gets a task by its unique id
     public synchronized T getTask(int id) throws TaskNotFoundException {
-        T task = taskMap.get(id); // retrives the task from the map by its hascode
+        T task = taskMap.get(id);
         if (task == null) {
-            throw new TaskNotFoundException("Task not found with ID " + id); // throws custom excpetion if task not
-                                                                             // found
+            throw new TaskNotFoundException("Task not found with ID " + id);
         }
-        return task; // returns the task
+        return task;
     }
 
     // Remove task by its unique ID
     public synchronized void removeTask(int id) throws TaskNotFoundException {
-        T task = taskMap.remove(id); // Removes the task from map by ID
+        T task = taskMap.remove(id);
         if (task == null) {
             throw new TaskNotFoundException("Task not found with ID " + id);
         }
@@ -46,10 +45,22 @@ public class TaskManager<T extends Task> {
 
     // Stream example : Filter task based on the completion status
     public List<T> getCompletedTask() {
-        taskList.stream() // Convert the task list to a stream
+        return taskList.stream() // Convert the task list to a stream
                 .filter(Task::isCompleted) // Filter tasks that are completed
                 .collect(Collectors.toList()); // Collect the results into a new list
+    }
 
+    // Stream example : Map task titles to uppercase
+    public List<String> getTaskTitlesInUppercase() {
+        return taskList.stream() // Converts the tasklist to stream
+                .map(task -> task.getTitle().toUpperCase()) // Convert each title to uppercase
+                .collect(Collectors.toList()); // Collects the result into a new list
+    }
+
+    // Update a task (Mark is as a complete)
+    public synchronized void updateTask(T task) throws TaskNotFoundException {
+        T existingTask = getTask(task.hashCode()); // Retrives the task by its ID (Hashcode)
+        existingTask.markCompleted(); // Mark it as complete
     }
 
 }
