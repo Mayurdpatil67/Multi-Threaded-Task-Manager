@@ -1,4 +1,4 @@
-# Multi-threaded Task Manager
+## Multi-threaded Task Manager
 
 This is a simple multi-threaded task manager system that allows you to add, update, remove, and process tasks concurrently. The system demonstrates key concepts of **Object-Oriented Programming (OOP)**, **multithreading**, **exception handling**, **generics**, **Java Collections**, and **streams**.
 
