@@ -35,3 +35,6 @@ Make sure you have the following installed:
    ```bash
    git clone https://github.com/your-username/multi-threaded-task-manager.git
    cd multi-threaded-task-manager
+
+## Contributions 
+Encourage contributions to improve the project
