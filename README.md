@@ -37,4 +37,4 @@ Make sure you have the following installed:
    cd multi-threaded-task-manager
 
 ## Contributions 
-Encourage contributions to improve the project
+Encourage contributions to improve the project.
